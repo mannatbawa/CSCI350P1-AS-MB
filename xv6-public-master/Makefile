@@ -182,7 +182,7 @@ UPROGS=\
 	_wc\
 	_zombie\
 	_test_project1\
-	_date\ 
+	_date
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)

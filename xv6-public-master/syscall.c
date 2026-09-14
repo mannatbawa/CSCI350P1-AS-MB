@@ -128,7 +128,7 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-[SYS_date]    sys_date,
+[SYS_date]    sys_date, // part b: when syscall interrupt is triggered, syscall() looks up SYS_date in syscalls[] and calls sys_date()
 [SYS_trace]   sys_trace,
 };
 
@@ -153,6 +153,7 @@ static char* syscalltoname[] = {
 [SYS_unlink]  "unlink",
 [SYS_link]    "link",
 [SYS_mkdir]   "mkdir",
+[SYS_date]    "date", // part b: when syscall interrupt is triggered, syscall() looks up SYS_date in syscalltoname[] and prints the name of the call
 [SYS_close]   "close",
 [SYS_trace]   "trace",
 };
