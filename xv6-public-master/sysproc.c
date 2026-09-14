@@ -89,3 +89,26 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//created sys_trace
+int
+sys_trace(void)
+{
+  // when a non-zero parameter is called 
+  int input;
+
+  //similar to kill implementation
+  if(argint(0, &input) < 0)
+    return -1;
+
+  if(input != 0){
+    // tracing is turned on when nonzero
+    myproc()->traced = 1;
+  }
+  else{
+    // if zero, turn off
+    myproc()->traced = 0;
+
+  }
+  return myproc()->total_calls;
+}

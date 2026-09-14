@@ -49,6 +49,10 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+  // need to add indication that trace is on or off (similar to killed)
+  int traced;
+  // need to add a variable keeping track of total number of system calls made
+  int total_calls;
 };
 
 // Process memory is laid out contiguously, low addresses first:
