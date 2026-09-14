@@ -89,6 +89,7 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+<<<<<<< HEAD
 
 //created sys_trace
 int
@@ -112,3 +113,5 @@ sys_trace(void)
   }
   return myproc()->total_calls;
 }
+=======
+>>>>>>> 24b82607853bda6c4cbf27c05aaa687452b6565a
