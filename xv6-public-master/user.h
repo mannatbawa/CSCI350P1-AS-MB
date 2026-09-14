@@ -24,6 +24,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int trace(int);
+int date(struct rtcdate*); // part b: tells compiler that date() is a function that exists and it takes a pointer to strcut rtcdate
 
 // ulib.c
 int stat(const char*, struct stat*);

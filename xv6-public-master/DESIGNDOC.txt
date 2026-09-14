@@ -1,0 +1,17 @@
+proc.h (Part A): Added traced and total_calls to struct proc.
+
+proc.c (Part A): Initialized p->traced = 0 and p->total_calls = 0 in allocproc().
+
+syscall.h (Part A, B): Added #define SYS_trace 22 and #define SYS_date 23.
+
+user.h (Part A, B): Added int trace(int) and int date(struct rtcdate*).
+
+usys.S (Part A, B): Added SYSCALL(trace) and SYSCALL(date) to load syscall numbers into %eax and trigger int $64.
+
+syscall.c (Part A, B): Added sys_trace and sys_date to syscalls[] and syscalltoname[]
+
+sysproc.c (Part A, B): Added sys_trace() and sys_date() kernel handlers.
+
+date.c (Part B): New user program that calls date(&r) and prints the current time.
+
+Makefile (Part A, B): Added _test_project1 (Part A) and _date (Part B) to UPROGS.

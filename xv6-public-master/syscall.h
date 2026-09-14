@@ -21,3 +21,4 @@
 #define SYS_mkdir  20
 #define SYS_close  21
 #define SYS_trace 22
+#define SYS_date 23 // part b: added so that when the user calls date(), it puts the number in the %eax register

@@ -89,7 +89,6 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
-<<<<<<< HEAD
 
 //created sys_trace
 int
@@ -113,5 +112,15 @@ sys_trace(void)
   }
   return myproc()->total_calls;
 }
-=======
->>>>>>> 24b82607853bda6c4cbf27c05aaa687452b6565a
+
+// part b: created sys_date
+int
+sys_date(void)
+{
+  struct rtcdate *r;
+
+  if(argptr(0, (void*)&r, sizeof(*r)) < 0) // collects first arg from  user program's stack + verifies the pointer points to a valid user mem of size sizeof(*r)
+    return -1;
+  cmostime(r); // reads current time from CMOS (aka hardware) and stores it in the rtcdate struct pointed to by r
+  return 0;
+}
